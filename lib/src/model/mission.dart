@@ -7,7 +7,7 @@ class SubMission {
 
   @override
   String toString() {
-    return 'SubMission{id: $id, op: $op, state: $state}';
+    return '${op.name} $state';
   }
 
   SubMission(this.id, this.op, this.state);
@@ -16,9 +16,9 @@ class SubMission {
 class Mission {
   String id;
   String title;
-  List<SubMission> todo;
+  List<SubMission>? todo;
 
-  Mission(this.id, this.title, this.todo);
+  Mission(this.id, this.title);
 
   @override
   String toString() {
@@ -26,8 +26,12 @@ class Mission {
   }
 }
 
+List<Mission> missionList = [];
+
+
+
 var sub1 = SubMission(1, op1, false);
-var mis1 = Mission("B2", "鎮守府正面海域を護れ！", [sub1]);
+var mis1 = Mission("B2", "鎮守府正面海域を護れ！");
 
 void main() {
   print(mis1);
